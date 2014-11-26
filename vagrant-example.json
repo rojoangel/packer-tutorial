@@ -9,8 +9,13 @@
 	"disk_size": 40960,
 
 	"guest_additions_mode": "disable",
+
+        "http_directory": "http",
         "boot_wait": "12s",
- 
+        "boot_command": [
+            "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos-6.5-os-x86_64/ks.cfg<enter><wait>"
+        ], 
+
         "ssh_username": "vagrant",
         "ssh_password": "vagrant",
         "ssh_port": 22,
