@@ -27,5 +27,9 @@
         ],
 
 	"shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
+    }],
+    "post-processors": [{
+        "output": "build/centos-6.5-x86_64.box",
+        "type": "vagrant"
     }]
 }
