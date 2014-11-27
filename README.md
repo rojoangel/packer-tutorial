@@ -43,5 +43,6 @@ and the created vagrant box made available at the ./build directory
     vagrant box add build/centos-6.5-x86_64 ./centos-6.5-x86_64.box
 Configure the box as the base for our project by changing the `Vagrant file`contents to the following
     config.vm.box = "build/centos-6.5-x86_64"
-Start the box by running
+Start and connect to the box by running
     vagrant up
+    vagrant ssh
