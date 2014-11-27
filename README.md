@@ -31,3 +31,17 @@ Install vagrant
 ---------------
     sudo apt-get install vagrant
 
+Building the vagrant box
+------------------------
+    packer build vagrant-example.json
+It will output the following message when completed
+    ==> Builds finished. The artifacts of successful builds are:
+    --> virtualbox-iso: 'virtualbox' provider box: build/centos-6.5-x86_64.box
+and the created vagrant box made available at the ./build directory
+    cd build
+    vagrant init
+    vagrant box add build/centos-6.5-x86_64 ./centos-6.5-x86_64.box
+Configure the box as the base for our project by changing the `Vagrant file`contents to the following
+    config.vm.box = "build/centos-6.5-x86_64"
+Start the box by running
+    vagrant up
